@@ -7,7 +7,6 @@
     <title>Internship Demo</title>
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-    <script src="https://accounts.google.com/gsi/client" async defer></script>
 </head>
 
 <body>
@@ -32,7 +31,7 @@
         }
 
         // Initialize Google Sign-In
-        window.addEventListener('DOMContentLoaded', () => {
+        function initGSI() {
             google.accounts.id.initialize({
                 client_id: '964840009697-gvbgl2tecm4c2b0sqda9m1t15n6lh5uh.apps.googleusercontent.com',
                 callback: handleCredentialResponse
@@ -47,8 +46,10 @@
 
                 }
             );
-        });
+        };
     </script>
+
+    <script src="https://accounts.google.com/gsi/client" async defer onload="initGSI()"></script>
 </body>
 
 </html>
